@@ -6,5 +6,5 @@ Java application using Threads for synchronous and asynchronous reading of rando
 
 Exemplo:
 ```
-git clone <link>
+git clone https://github.com/KaioGalvao/Java-Threads.git
 ```
