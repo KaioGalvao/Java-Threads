@@ -13,7 +13,7 @@ public class WriteBufferStringArray implements Runnable{
 		for (int count = 0;count < 10;count++) {
 			try {
 				Thread.sleep(generator.nextInt(3000));
-				sharedLocation.putBufferStringArray(valorString[count]);
+				sharedLocation.putBufferStringArray(count);
 				int actualValue = Integer.parseInt(valorString[count]);
 
 				sum+=actualValue;
