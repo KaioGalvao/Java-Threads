@@ -1,6 +1,7 @@
 import java.security.SecureRandom;
 
 public class WriteBufferStringArray implements Runnable{
+	private String[] valorString = {"1","2","3","4","5","6","7","8","9","10"};
 	private static final SecureRandom
 	generator = new SecureRandom();
 	private final Buffer sharedLocation;
@@ -9,11 +10,13 @@ public class WriteBufferStringArray implements Runnable{
 	}
 	public void run() {
 		int sum = 0;
-		for (int count =1;count <=10;count++) {
+		for (int count = 0;count < 10;count++) {
 			try {
 				Thread.sleep(generator.nextInt(3000));
-				sharedLocation.putBufferStringArray(count);
-				sum+=count;
+				sharedLocation.putBufferStringArray(valorString[count]);
+				int actualValue = Integer.parseInt(valorString[count]);
+
+				sum+=actualValue;
 				System.out.printf("\t\t\t%d\n",sum);
 				}
 			catch(InterruptedException e){
